@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".QuestionActivity"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background"
+    android:isScrollContainer="true"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv_question"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="120dp"
+        android:fontFamily="@font/nunito"
+        android:text=""
+        android:textColor="@color/head_text"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@id/radioGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="KASKHKHFBAEJAGHRGUIEEGJKAERILBEBdfsdhfkjdfhkhndfskjsdhfiwebkJAERRJ"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:padding="20dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_question"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <RadioButton
+            android:id="@+id/op_0"
+            android:textSize="25sp"
+            android:textColor="@color/white"
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="One"
+            android:checked="false"
+            />
+
+        <RadioButton
+            android:id="@+id/op_1"
+            android:textSize="25sp"
+            android:textColor="@color/white"
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            tools:text="One"/>
+
+        <RadioButton
+            android:id="@+id/op_2"
+            android:textSize="25sp"
+            android:textColor="@color/white"
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            tools:text="One"/>
+
+        <RadioButton
+            android:id="@+id/op_3"
+            android:textSize="25sp"
+            android:textColor="@color/white"
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            tools:text="One"/>
+
+    </RadioGroup>
+
+
+    <Button
+        android:id="@+id/btn_next"
+        android:text="@string/next"
+        app:cornerRadius="10dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup"
+        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/pink_button"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

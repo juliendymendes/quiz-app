@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="questions">
+        <item>In which part of your body would you find the cruciate ligament?</item>
+        <item>What is the name of the main antagonist in the Shakespeare play Othello?</item>
+        <item>What element is denoted by the chemical symbol Sn in the periodic table?</item>
+        <item>What is the name of the 1976 film about the Watergate scandal, starring Robert Redford and Dustin Hoffman?</item>
+        <item>How many of Henry VIII’s wives were called Catherine?</item>
+        <item>What was the most popular girls name in the UK in 2019?</item>
+        <item>Which comedian was the second permanent host of Never Mind the Buzzcocks after Mark Lamarr?</item>
+        <item>Which popular video game franchise has released games with the subtitles World At War and Black Ops?</item>
+        <item>In what US State is the city Nashville?</item>
+        <item>Which rock band was founded by Trent Reznor in 1988?</item>
+        <item>What is the currency of Denmark?</item>
+        <item>Which Tennis Grand Slam is played on a clay surface?</item>
+        <item>In which European country would you find the Rijksmuseum?</item>
+        <item>How many films have Al Pacino and Robert De Niro appeared in together?</item>
+        <item>What was the old name for a Snickers bar before it changed in 1990?</item>
+        <item>Who was the head of state in Japan during the second world war?</item>
+        <item>What is the smallest planet in our solar system?</item>
+        <item>Who wrote the novels Gone Girl and Sharp Objects?</item>
+        <item>Which legendary surrealist artist is famous for painting melting clocks?</item>
+        <item>Which football club plays its home games at Loftus Road?</item>
+        <item>Continental United States has 4 time zones, can you name them?</item>
+        <item>What was the Turkish city of Istanbul called before 1930?</item>
+        <item>From which US city do the band The Killers originate?</item>
+        <item>Name the Coffee shop in US sitcom Friends?</item>
+        <item>How many human players are there on each side in a polo match?</item>
+        <item>In what year did Tony Blair become British Prime Minister?</item>
+        <item>How many times has England won the men’s football World Cup?</item>
+        <item>What is the capital of New Zealand?</item>
+        <item>Street artist Banksy is originally associated with which British city?</item>
+        <item>From what grain is the Japanese spirit Sake made?</item>
+
+    </string-array>
+    
+    <string-array name="answers">
+        <item>Knee</item>
+        <item>Iago</item>
+        <item>Tin</item>
+        <item>All the President’s Men</item>
+        <item>3</item>
+        <item>Olivia</item>
+        <item>Simon Amstell</item>
+        <item>Call of Duty</item>
+        <item>Tennessee</item>
+        <item>Nine Inch Nails</item>
+        <item>Krone</item>
+        <item>The French Open (Roland Garros)</item>
+        <item>Netherlands</item>
+        <item>Four (The Godfather Part 2, Heat, Righteous Kill, The Irishman)</item>
+        <item>Marathon</item>
+        <item>Emperor Hirohito</item>
+        <item>Mercury</item>
+        <item>Gillian Flynn</item>
+        <item>Salvador Dali</item>
+        <item>Queen’s Park Rangers</item>
+        <item>Pacific, Mountain, Central, Eastern</item>
+        <item>Constantinople</item>
+        <item>Las Vegas</item>
+        <item>Central Perk</item>
+        <item>Four</item>
+        <item>1997</item>
+        <item>Once (1966)</item>
+        <item>Wellington</item>
+        <item>Bristol</item>
+        <item>Rice</item>
+    </string-array>
+</resources>
