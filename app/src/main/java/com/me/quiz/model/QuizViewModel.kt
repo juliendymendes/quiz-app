@@ -12,17 +12,22 @@ class QuizViewModel: ViewModel() {
     private var _currentQuestion = MutableLiveData<Question>()
     val currentQuestion: LiveData<Question> = _currentQuestion
 
-    private  var questionCount = 0
+    private var questionCount = 0
 
     var score = 0
+        private set
 
     //TODO variável de tempo
 
     private var questionsList = mutableListOf<Question>()
     private lateinit var tempQuestion: Question
 
+    init {
+        getNextQuestion()
+    }
+
     /*
-     *atualiza a _currentQuestion com uma questao aleatoria e com as respostas embaralhadas
+     * atualiza a _currentQuestion com uma questao aleatoria e com as respostas embaralhadas
      */
     private fun getNextQuestion(){
         tempQuestion = questions.random()
@@ -35,8 +40,6 @@ class QuizViewModel: ViewModel() {
             questionsList.add(tempQuestion)
 
         }
-
-
     }
 
     fun nextQuestion(): Boolean{
@@ -46,17 +49,11 @@ class QuizViewModel: ViewModel() {
         }else false
     }
 
-
+    // atualiza o score se a resposta está correta
     fun isCorrectAnswer(answer: String){
         if(answer == currentQuestion.value!!.correctAnswer) {
             this.score +=1
         }
-
     }
-
-    init {
-        getNextQuestion()
-    }
-
 
 }

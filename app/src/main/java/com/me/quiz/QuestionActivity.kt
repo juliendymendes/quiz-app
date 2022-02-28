@@ -20,6 +20,7 @@ class QuestionActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityQuestionBinding
     private val viewModel: QuizViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityQuestionBinding.inflate(layoutInflater)
@@ -37,45 +38,41 @@ class QuestionActivity : AppCompatActivity() {
             }
         }
 
-
-
-        binding.apply {
-
-            btnNext.setOnClickListener {
-                if(binding.radioGroup.checkedRadioButtonId != -1){
-                    // recupera a resposta selecionada pelo usuário
-                    val checkedRadioButton = findViewById<RadioButton>(binding.radioGroup.checkedRadioButtonId)
-                    val answer = checkedRadioButton.text.toString()
-
-                    viewModel.isCorrectAnswer(answer) // verifica se a resposta está certa
-
-                    // verifica se ainda há questões para serem exibidas
-                    if (!viewModel.nextQuestion()){
-                        val intent = Intent(this@QuestionActivity, ResultActivity::class.java)
-
-
-                        intent.putExtra("score", viewModel.score)
-                        startActivity(intent)
-
-                    }
-
-                    binding.radioGroup.clearCheck()
-                }else{
-                    MaterialAlertDialogBuilder(this@QuestionActivity)
-                        .setTitle(getString(R.string.ops))
-                        .setMessage(getString(R.string.select_answer))
-                        .setCancelable(true)
-                        .show()
-                }
-
-
-            }
-
-
-        }
-
+        binding.btnNext.setOnClickListener { onNext() }
 
     }
+
+
+    private fun onNext(){
+
+        if(binding.radioGroup.checkedRadioButtonId != -1){
+            // recupera a resposta selecionada pelo usuário
+            val checkedRadioButton = findViewById<RadioButton>(binding.radioGroup.checkedRadioButtonId)
+            val answer = checkedRadioButton.text.toString()
+
+            viewModel.isCorrectAnswer(answer) // verifica se a resposta está certa
+
+            /*
+            * verifica se ainda há questões para serem exibidas.
+            * Se não tiver, inicia a tela de resultados
+            */
+            if (!viewModel.nextQuestion()){
+                val intent = Intent(this@QuestionActivity, ResultActivity::class.java)
+                intent.putExtra("score", viewModel.score)
+                startActivity(intent)
+            }
+
+            binding.radioGroup.clearCheck()
+        }else{
+            MaterialAlertDialogBuilder(this@QuestionActivity)
+                .setTitle(getString(R.string.ops))
+                .setMessage(getString(R.string.select_answer))
+                .setCancelable(true)
+                .show()
+        }
+
+    }
+
 
 
 
