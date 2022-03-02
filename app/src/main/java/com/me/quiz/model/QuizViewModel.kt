@@ -1,10 +1,14 @@
 package com.me.quiz.model
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.me.quiz.data.DataSource
 import com.me.quiz.data.MAX_NO_OF_QUESTIONS
+import java.time.LocalTime
+import java.util.*
+
 
 class QuizViewModel: ViewModel() {
     private val questions = DataSource.questions
@@ -17,7 +21,6 @@ class QuizViewModel: ViewModel() {
     var score = 0
         private set
 
-    //TODO variável de tempo
 
     private var questionsList = mutableListOf<Question>()
     private lateinit var tempQuestion: Question
@@ -38,7 +41,6 @@ class QuizViewModel: ViewModel() {
             _currentQuestion.value = tempQuestion
             questionCount += 1
             questionsList.add(tempQuestion)
-
         }
     }
 

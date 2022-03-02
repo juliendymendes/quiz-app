@@ -14,17 +14,20 @@ import com.me.quiz.databinding.ActivityQuestionBinding
 import com.me.quiz.data.DataSource
 import com.me.quiz.data.MAX_NO_OF_QUESTIONS
 import com.me.quiz.model.QuizViewModel
+import java.util.*
 import kotlin.properties.Delegates
 
 class QuestionActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityQuestionBinding
     private val viewModel: QuizViewModel by viewModels()
-
+    private var startTime: Long = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityQuestionBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        startTime = Date().time
 
         // atualiza a UI com respectiva questão e respostas
         viewModel.currentQuestion.observe(this) { currentQuestion ->
@@ -54,11 +57,12 @@ class QuestionActivity : AppCompatActivity() {
 
             /*
             * verifica se ainda há questões para serem exibidas.
-            * Se não tiver, inicia a tela de resultados
+            * Se não tiver, inicia a tela de resultados, passando o score final e o tempo de inicio do quiz
             */
             if (!viewModel.nextQuestion()){
                 val intent = Intent(this@QuestionActivity, ResultActivity::class.java)
                 intent.putExtra("score", viewModel.score)
+                intent.putExtra("startTime", startTime.toString())
                 startActivity(intent)
             }
 

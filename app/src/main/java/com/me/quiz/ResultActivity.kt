@@ -7,6 +7,9 @@ import androidx.activity.viewModels
 import com.me.quiz.databinding.ActivityQuestionBinding
 import com.me.quiz.databinding.ActivityResultBinding
 import com.me.quiz.model.QuizViewModel
+import java.time.ZonedDateTime
+import java.time.format.DateTimeFormatter
+import java.util.*
 
 class ResultActivity : AppCompatActivity() {
     private lateinit var binding: ActivityResultBinding
@@ -15,6 +18,13 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        
+        val startTime = intent.extras?.getString("startTime")?.toLong()
+
+        val endTime = Date().time
+
+        // tempo de que levou para terminar o quiz em segundos
+        val finalTime = (endTime - startTime!!)/1000
 
         val score = intent.extras?.getInt("score")
 
@@ -28,7 +38,7 @@ class ResultActivity : AppCompatActivity() {
 
             }
             tvHits.text = getString(R.string.hits, score)
-
+            tvTime.text = getString(R.string.time, finalTime)
             btnTryAgain.setOnClickListener { onTryAgain() }
         }
     }

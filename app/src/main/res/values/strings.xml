@@ -14,7 +14,7 @@
     <string name="start_quiz">Start</string>
     <string name="congrats">Congrats! You passed :)</string>
     <string name="hits">You hit %d out of 10 questions</string>
-    <string name="time">Time: %d:%d:%d</string>
+    <string name="time">Time: %d seconds</string>
     <string name="exit">Exit</string>
     <string name="fail">Oh no! You failed :(</string>
     <string name="sad_face">Sad face</string>
