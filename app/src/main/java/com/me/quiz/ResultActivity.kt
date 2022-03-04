@@ -3,6 +3,7 @@ package com.me.quiz
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import com.me.quiz.databinding.ActivityQuestionBinding
 import com.me.quiz.databinding.ActivityResultBinding
@@ -40,6 +41,7 @@ class ResultActivity : AppCompatActivity() {
             tvHits.text = getString(R.string.hits, score)
             tvTime.text = getString(R.string.time, finalTime)
             btnTryAgain.setOnClickListener { onTryAgain() }
+
         }
     }
 

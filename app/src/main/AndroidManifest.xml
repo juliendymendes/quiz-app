@@ -15,12 +15,6 @@
             android:name=".ResultActivity"
             android:exported="false" />
         <activity
-            android:name=".FailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".VictoryActivity"
-            android:exported="false" />
-        <activity
             android:name=".QuestionActivity"
             android:exported="false" />
         <activity
